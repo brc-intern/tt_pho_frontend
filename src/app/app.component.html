@@ -1,0 +1,20 @@
+<body class="home-template">
+  <div class="site-wrapper">
+    <nav class="main-nav overlay clearfix">
+      <a class="blog-logo" routerLink="/home"><img src="assets/img/image_12.png" alt="Fashion Critiques" /></a>
+      <ul id="menu">
+        <li class="nav-home nav-current" role="presentation"><a href="#">Home</a></li>
+        <li class="nav-article-example" role="presentation"><a href="#">Post Example</a></li>
+        <li class="nav-about-us" role="presentation"><a href="#">Page Example</a></li>
+        <li class="nav-author-page" role="presentation"><a href="#">Author Page</a></li>
+        <span class="socialheader">
+          <a *ngIf="!service.isUserLoggedIn()" routerLink="login"><span class='symbol'>login</span></a>
+          <a *ngIf="service.isUserLoggedIn()" ><span class='symbol'>Hi, {{username}}</span></a>
+          <a *ngIf="service.isUserLoggedIn()" (click)="service.logOut()" routerLink="/home"><span class='symbol'>logout</span></a> 
+                
+        </span>
+      </ul>
+    </nav>
+  </div>
+</body>
+<router-outlet></router-outlet>
