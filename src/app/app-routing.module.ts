@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { AdmincreateproductComponent } from './admincreateproduct/admincreateproduct.component';
+import { AdminlistproductComponent } from './adminlistproduct/adminlistproduct.component';
+import { AdminupdateproductComponent } from './adminupdateproduct/adminupdateproduct.component';
 import { HomeComponent } from './home/home.component';
 import { ListproductComponent } from './listproduct/listproduct.component';
 import { LoginComponent } from './login/login.component';
@@ -30,6 +33,15 @@ const routes: Routes = [
   },
   {
     path:'listproduct', component: ListproductComponent
+  },
+  {
+    path:'adminlistproduct', component: AdminlistproductComponent
+  },
+  {
+    path:'createproduct', component: AdmincreateproductComponent
+  },
+  {
+    path:'update/:id', component: AdminupdateproductComponent
   }
 ];
 
