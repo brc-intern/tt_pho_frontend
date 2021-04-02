@@ -6,7 +6,7 @@
         <li class="nav-home nav-current" role="presentation"><a href="#">Home</a></li>
         <li class="nav-article-example" role="presentation"><a href="#">Post Example</a></li>
         <li class="nav-about-us" role="presentation"><a href="#">Page Example</a></li>
-        <li class="nav-author-page" role="presentation"><a href="/adminlistproduct">Quan ly product</a></li>
+        <li class="nav-author-page" role="presentation"><a *ngIf="service.isAdmin()" href="/adminlistproduct">Quan ly product</a></li>
         <li class="nav-item dropdown" dropdown>
           <a *ngIf="service.isUserLoggedIn()" dropdownToggle mdbWavesEffect type="button"
             class="nav-link dropdown-toggle waves-light" mdbWavesEffect>

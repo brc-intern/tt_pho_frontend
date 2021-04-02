@@ -57,7 +57,7 @@ export class UserService {
 
   }
   isAdmin() {
-    let admin = sessionStorage.getItem('roless')
+    let admin = sessionStorage.getItem('roles')
     console.log((admin === "admin"))
 
     return (admin === "admin")

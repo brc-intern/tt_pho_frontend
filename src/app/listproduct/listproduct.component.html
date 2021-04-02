@@ -4,7 +4,7 @@
 <main>
   <div>
     <div class="container">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-3">
           <aside class="sidebar_menu" >
             <ul *ngFor='let pro of product' class="list-group">
@@ -22,7 +22,7 @@
                   <a href="" title="">
                     <img
                       src="./assets/img/{{pro.image}}"
-                      alt="so co la gung"></a>
+                     ></a>
                   <div class="new"><img class="svg-new" src="" alt=""><span>MỚI</span></div>
                 </div>
                 <div class="menu_item_info bg_white">
@@ -31,6 +31,21 @@
                     target="_blank" title="Mua Ngay">Mua ngay</a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="column col-9">
+          <div class="card" *ngFor='let pro of product'>
+            <div class="card-img">
+              <img src="./assets/img/{{pro.image}}">
+            </div>
+            <div class="card-info">
+              <h4>{{pro.name}}</h4>
+              <div class="price_product_item">{{pro.price}} đ</div>
+              <a class="btn-price" href="" target="_blank" title="Mua Ngay">Mua ngay</a>
+              <a class="btn-tht" href="">Tìm hiểu thêm</a>
             </div>
           </div>
         </div>

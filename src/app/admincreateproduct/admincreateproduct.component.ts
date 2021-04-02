@@ -16,7 +16,7 @@ export class AdmincreateproductComponent implements OnInit {
   msg='';
   path: String;
 
-  imgSrc: string ;
+  imgSrc: String ;
   selectImage: any;
   isSubmitted: boolean;
 
