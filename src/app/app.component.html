@@ -6,15 +6,34 @@
         <li class="nav-home nav-current" role="presentation"><a href="#">Home</a></li>
         <li class="nav-article-example" role="presentation"><a href="#">Post Example</a></li>
         <li class="nav-about-us" role="presentation"><a href="#">Page Example</a></li>
-        <li class="nav-author-page" role="presentation"><a href="#">Author Page</a></li>
-        <span class="socialheader">
+        <li class="nav-author-page" role="presentation"><a *ngIf="service.isAdmin()" href="/adminlistproduct">Quan ly product</a></li>
+        <li class="nav-item dropdown" dropdown>
+          <a *ngIf="service.isUserLoggedIn()" dropdownToggle mdbWavesEffect type="button"
+            class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="user"></mdb-icon><img width="40px" src="./assets/img/account.png"> Hi, {{username}}<span class="caret"></span>
+          </a>
+          <a *ngIf="!service.isUserLoggedIn()" dropdownToggle mdbWavesEffect type="button"
+            class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="user2"></mdb-icon><img width="40px" src="./assets/img/account.png"><span class="caret"></span>
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+            <a *ngIf="!service.isUserLoggedIn()" class="dropdown-item waves-light" mdbWavesEffect routerLink="login">Log In</a>
+            <a *ngIf="service.isUserLoggedIn()" class="dropdown-item waves-light" (click)="service.logOut()" routerLink="/home">Log Out</a>
+          </div>
+        </li>
+        <!-- <span class="socialheader">
           <a *ngIf="!service.isUserLoggedIn()" routerLink="login"><span class='symbol'>login</span></a>
-          <a *ngIf="service.isUserLoggedIn()" ><span class='symbol'>Hi, {{username}}</span></a>
-          <a *ngIf="service.isUserLoggedIn()" (click)="service.logOut()" routerLink="/home"><span class='symbol'>logout</span></a> 
-                
-        </span>
+          <a *ngIf="service.isUserLoggedIn()"><span class='symbol'>Hi, {{username}}</span></a>
+          <a *ngIf="service.isUserLoggedIn()" (click)="service.logOut()" routerLink="/home"><span
+              class='symbol'>logout</span></a>
+
+        </span> -->
       </ul>
     </nav>
   </div>
+
 </body>
+
+
 <router-outlet></router-outlet>

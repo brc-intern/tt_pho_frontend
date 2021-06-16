@@ -1,1 +1,33 @@
-<p>adminlistproduct works!</p>
+<div class="container">
+    <h2>List Product</h2>
+
+    <div>
+        <input type="text" placeholder="search by name" [(ngModel)]="name">
+        <button class="" type="button" (click)="searchName()">
+            Search
+        </button>
+    </div>
+
+    <button [routerLink]="['/createproduct']">Them Product</button>
+    <table class="table table-striped">
+        <tr>
+            <td>Image</td>
+            <td>Name</td>
+            <td>Price</td>
+            <!-- <td>kind</td> -->
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr *ngFor="let pro of product">
+            <td><img width="200px" src="/assets/img/{{pro.image}}"></td>
+            <td>{{pro.name}}</td>
+            <td>{{pro.price}}</td>
+            <!-- <td>{{pro.idKind}}</td> -->
+            <td><button (click)="deleteProduct(pro.id)" class="text-danger">Delete</button></td>
+            <td>
+                <button (click)="selectUpdate(pro.id)">Edit</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -2332,6 +2332,7 @@ div#preloader {
 }
 
 .card-info .btn-tht {
+	float: right;
     font-size: 16px;
     font-weight: 700;
     color: #EA8025;

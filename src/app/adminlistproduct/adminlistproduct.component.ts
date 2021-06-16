@@ -35,12 +35,12 @@ export class AdminlistproductComponent implements OnInit {
       }
     )
   }
-  setActiveAnimal(product: Product, index: number): void{
+  setActiveProduct(product: Product, index: number): void{
     this.currentProduct = product;
     this.currentIndex = index;
   }
 
-  deleteAnimal(id: number){
+  deleteProduct(id: number){
     this.service.deleteProduct(id).subscribe(
       data => {
         console.log(data);
@@ -64,6 +64,6 @@ export class AdminlistproductComponent implements OnInit {
     );
   }
   selectUpdate(id: number){
-    this.router.navigate(['edit', id])
+    this.router.navigate(['update', id])
   }
 }
